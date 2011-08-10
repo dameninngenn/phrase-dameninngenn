@@ -1,6 +1,7 @@
 # Phrase: furl basic [http url uri]
 #===========================================================
-t
+# http://blog.livedoor.jp/xaicron/archives/51324535.html
+
 use strict;
 use warnings;
 use 5.0100;
