@@ -1,4 +1,4 @@
-# Phrase: furl basic [http url uri]
+# Phrase: Furl basic [furl http url uri]
 #===========================================================
 # http://blog.livedoor.jp/xaicron/archives/51324535.html
 
@@ -27,4 +27,17 @@ say $res->content;
 use HTTP::Request;
 my $req = HTTP::Request->new(GET => 'http://example.com');
 my $res2 = $furl->request($req);
+
+# Phrase: Encode::Guess [encode decode guess]
+#===========================================================
+
+use strict;
+use warnings;
+use Encode::Guess;
+
+my $content = 'multibyte string';
+
+my $enc = guess_encoding($content, qw/euc-jp shiftjis 7bit-jis/);
+$content = Encode::decode($enc->name, $content);
+$content = Encode::encode('utf-8', $content);
 
