@@ -87,3 +87,11 @@ function getAreaRange(obj) {
     return pos;
 }
 
+// Phrase: catch text change event [plugin textarea undo redo]
+//==============================================
+// need plugin
+// http://www.zurb.com/playground/jquery-text-change-custom-event
+$('#id').bind('textchange',function(event,previousText) {
+    alert( previousText );
+});
+
