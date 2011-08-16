@@ -87,11 +87,22 @@ function getAreaRange(obj) {
     return pos;
 }
 
-// Phrase: catch text change event [plugin textarea undo redo]
+// Phrase: jQuery catch text change event [plugin textarea undo redo]
 //==============================================
 // need plugin
 // http://www.zurb.com/playground/jquery-text-change-custom-event
 $('#id').bind('textchange',function(event,previousText) {
     alert( previousText );
+});
+
+// Phrase: jQuery select change event [selectbox hide show]
+//==============================================
+$("select[name=hoge]").change(function(){
+    if( $("select[name=hoge]").children(':selected').val() == 2 ){
+        $('#id').show();
+    }
+    else {
+        $('#id').hide();
+    }
 });
 
