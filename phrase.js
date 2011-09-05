@@ -37,7 +37,7 @@ $('#id').click(function () {
     });
 });
 
-// Phrase: hide and show [visible]
+// Phrase: hide and show [jquery visible]
 //==============================================
 // html
 <div id="id2" style="display:none;"></div>
@@ -87,7 +87,7 @@ function getAreaRange(obj) {
     return pos;
 }
 
-// Phrase: jQuery catch text change event [plugin textarea undo redo]
+// Phrase: jQuery catch text change event [jquery plugin textarea undo redo]
 //==============================================
 // need plugin
 // http://www.zurb.com/playground/jquery-text-change-custom-event
@@ -95,7 +95,7 @@ $('#id').bind('textchange',function(event,previousText) {
     alert( previousText );
 });
 
-// Phrase: jQuery select change event [selectbox hide show]
+// Phrase: jQuery select change event [jquery selectbox hide show]
 //==============================================
 $("select[name=hoge]").change(function(){
     if( $("select[name=hoge]").children(':selected').val() == 2 ){
@@ -104,5 +104,33 @@ $("select[name=hoge]").change(function(){
     else {
         $('#id').hide();
     }
+});
+
+// Phrase: setInterval [time interval]
+//==============================================
+var interval = 2000;
+var tid = setInterval(function() {
+    // do something
+    if( done ) {
+        // do something
+        clearInterval(tid);
+    }
+},interval);
+
+// Phrase: jQuery countdown [jquery plugin textarea undo redo]
+//==============================================
+// need plugin
+// http://keith-wood.name/countdown.html
+var until_date_str = '2011-09-20 11:22:33';
+var re = until_date_str.match(/(\d+)-(\d+)-(\d+) (\d+):(\d+):(\d+)/);
+var year   = re[1];
+var month  = re[2];
+var dates  = re[3];
+var hour   = re[4];
+var minute = re[5];
+var until_date = new Date(year,month,dates,hour,minute);
+$('.countdown').countdown({
+    until: until_date,
+    layout: '<p>hogeまであと {dn}日 {hn}時間 {mn}分 {sn}秒</p>'
 });
 
